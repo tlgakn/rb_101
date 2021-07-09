@@ -19,16 +19,31 @@
   
 =end
 
+# def triangle(number)
+#   star = "*"
+#   empty_line = " "
+#   index = 1
+
+#   loop do 
+#     puts "#{empty_line * number}#{star*index}"
+#     index += 1
+#     number -= 1
+#     break if number == 0
+#   end
+
+# end
+
+# further exploration
 def triangle(number)
-  asterix = "*"
+  star = "*"
   empty_line = " "
-  index = 1
-  number_of_empty_spaces = number - 1
+  index = 0
+
   loop do 
-    puts "#{empty_line * number_of_empty_spaces}#{asterix*index}"
+    puts "#{empty_line * index}#{star*number}"
     index += 1
-    number_of_empty_spaces -= 1
-    break if index > number
+    number -= 1
+    break if number == 0
   end
 end
   

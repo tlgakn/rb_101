@@ -20,6 +20,17 @@ def greetings(name, status)
   "Hello, #{name.join(' ')}! Nice to have a #{status[:title]} #{status[:occupation]} around."
 end
 
+#second time
+def greetings(array, hash)
+  puts "Hello, " + array.join(' ') + "!" + " Nice to have a " + hash.values.join(' ') + " around."
+end
+
+# further exploration
+def greetings(name, status)
+  full_name = name.join(' ')
+  job = status.values.join(' ')
+  puts "Hello #{full_name}! nice to have a #{job} around."
+end
 
 p greetings(['John', 'Q', 'Doe'], { title: 'Master', occupation: 'Plumber' })
 # => Hello, John Q Doe! Nice to have a Master Plumber around.

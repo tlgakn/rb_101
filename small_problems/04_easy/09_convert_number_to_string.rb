@@ -13,8 +13,25 @@ Examples
 =end
 
 # My Solution
-def integer_to_string(integer)
-  integer.digits.reverse.join
+LOOK_UP = {
+          1 => '1',
+          2 => '2',
+          3 => '3', 
+          4 => '4',
+          5 => '5',
+          6 => '6',
+          7 => '7',
+          8 => '8',
+          9 => '9',
+          0 => '0'
+}
+
+def integer_to_string(number)
+  num_str = ''
+  num_arr = number.digits.reverse
+  
+  num_arr.each {|num| num_str << LOOK_UP[num]}
+  num_str
 end
 
 

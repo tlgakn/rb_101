@@ -20,20 +20,39 @@ Copy Code
 
 =end
 
-# def leading_substrings(string)
-  
-#   leading_array = []
-#   index = 0
-#   loop do
-    
-#     leading_array << string[0..index]
-#     index += 1
-    
-#     break if index == string.length
-#   end
-#   leading_array
-# end
+def leading_substrings(string)
+  leading_array = []
+  index = 0
+  loop do
+    leading_array << string[0..index]
+    index += 1
+    break if index == string.length
+  end
+  leading_array
+end
 
+# second time
+def leading_substrings(string)
+  array = []
+  0.upto(string.length - 1) do |length|
+    array << string[0..length]
+  end
+  array
+end
+
+# third time 
+def leading_substrings(str)
+  sub_str = []
+  index = 0
+  loop do 
+    sub_str << str[0..index]
+    index += 1
+    break if index >= str.length
+  end
+  sub_str
+end
+
+# ls solution
 def leading_substrings(string)
 
   result = []

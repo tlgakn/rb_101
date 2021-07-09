@@ -22,25 +22,22 @@ Copy Code
 
 =end
 
-# my soution
+# rona's solution
 def word_lengths(string)
-  words_array = string.split
-  size_array = []
-  
-  words_array.each do |word|
-    size_array << word.size
-  end
-  
-  words_array.zip(size_array).flatten  
-end
-  
-  # rona's solution
-  def word_lengths(string)
   array_of_words = string.split
-  
+
   array_of_words.map do |word|
     "#{word} #{word.size.to_s}"
   end
+end
+
+# second time 
+def word_lengths(word)
+  return_array = []
+  word.split.each do |obj|
+    return_array << obj + ' ' + obj.length.to_s
+  end
+  return_array
 end
   
   # ls solution

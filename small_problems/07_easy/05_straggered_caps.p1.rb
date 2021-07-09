@@ -21,6 +21,7 @@
 
 # Example:
 
+# first time
 def staggered_case(string_of_characters)
   straggered_caps_array = string_of_characters.chars.map.with_index do |char, index|
     if index % 2 == 0
@@ -30,6 +31,30 @@ def staggered_case(string_of_characters)
     end
   end
   straggered_caps_array.join
+end
+
+#second time
+def staggered_case(string)
+  staggered = string.chars.map.with_index do |el,idx|
+    if idx.even? 
+      el.upcase
+    else
+      el.downcase
+    end
+  end
+  staggered.join
+end
+
+# third time
+def staggered_case(string)
+  staggered = string.chars.map.with_index do |char, idx|
+    if idx.even? 
+      char.upcase
+    else
+      char.downcase
+    end
+  end
+  staggered.join("")
 end
   
 # Copy Code

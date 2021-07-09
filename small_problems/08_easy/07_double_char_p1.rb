@@ -17,6 +17,15 @@ def repeater(string)
 
 end
 
+# second time
+def repeater(string)
+  result = ''
+  string.chars.each do |idx|
+    result << string[idx] * 2
+  end
+  result
+end
+
 p repeater('Hello') == "HHeelllloo"
 p repeater("Good job!") == "GGoooodd  jjoobb!!"
 p repeater('') == ''

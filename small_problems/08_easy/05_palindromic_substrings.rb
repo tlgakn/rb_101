@@ -33,7 +33,6 @@
 
 =end
 
-# this method iterates through every character, every time beginning from 0 index ex: a,ab,abc..
 def leading_substrings(string)
   result = []
   0.upto(string.size - 1) do |index|
@@ -41,10 +40,7 @@ def leading_substrings(string)
   end
   result
 end
-  
-  # this method iterates through every character and when one iteration is ended, next time it goes to second character and so on.. ex: a,ab,abc,abcd,
-                          # b,bc,bcd...
-                          # until one character is left (it prints also the last character)
+
 def substrings(string)
   results = []
   (0...string.size).each do |start_index|
@@ -53,11 +49,7 @@ def substrings(string)
   end
   results
 end
-  
-  # def reverse(string)
-  #   string.reverse == string
-  # end
-  
+
 def palindromes(string)
   palindrome_strings = []
   
@@ -72,14 +64,58 @@ def palindromes(string)
   end
   palindrome_strings
 end
+
+
+
+# second time
+=begin
+Palindromic Substrings
+Write a method that returns a list of all substrings of a string that are palindromic. That is, each substring must consist of the same sequence of characters forwards as it does backwards. The return value should be arranged in the same sequence as the substrings appear in the string. Duplicate palindromes should be included multiple times.
+
+You may (and should) use the substrings method you wrote in the previous exercise.
+
+For the purposes of this exercise, you should consider all characters and pay attention to case; that is, "AbcbA" is a palindrome, but neither "Abcba" nor "Abc-bA" are. In addition, assume that single characters are not palindromes.
+
+Examples:
+
+is_palindrome? 
+- define the method if the substrings are palindrome
+
+
+=end
+
+
+def substrings(string)
+  result = []
+  0.upto(string.length - 1) do |index|
+    1.upto(string.length - index) do |length|
+    result << string[index,length]
+    end
+  end
+  result
+end
+
+def is_palindrome?(string)
+  return false if string.size < 2
+  string == string.reverse
+end
+
+def palindromes(string)
+  substrings = substrings(string)
   
+  palindromes = []
+  
+  substrings.each do |sub_str| 
+    if is_palindrome?(sub_str)
+      palindromes << sub_str
+    end
+  end
+  palindromes
+end
+
 
 p palindromes('abcd') == []
-p palindromes('madam') == ['madam', 'ada'] # m,ma,mad,mada,madam,
-                                            # a,ad,ada,adam
-                                            # d, da,dam
-                                            # a, am
-                                            # m
+p palindromes('madam') == ['madam', 'ada']
 p palindromes('hello-madam-did-madam-goodbye') == [
   'll', '-madam-', '-madam-did-madam-', 'madam', 'madam-did-madam', 'ada',
   'adam-did-mada', 'dam-did-mad', 'am-did-ma', 'm-did-m', '-did-', 'did',
@@ -88,3 +124,4 @@ p palindromes('hello-madam-did-madam-goodbye') == [
 p palindromes('knitting cassettes') == [
   'nittin', 'itti', 'tt', 'ss', 'settes', 'ette', 'tt'
 ]
+  

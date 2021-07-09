@@ -39,6 +39,18 @@ def word_cap(string)
   array_of_words.join(" ")
 end
   
+# second time
+def word_cap(string)
+  string.split.each do |word|
+    word.capitalize!
+  end.join(" ")
+end
+
+#third time
+def word_cap(sentence)
+  new_word = sentence.split.map {|word| word.capitalize}.join(" ")
+end
+
   
 # def word_cap(string)
 #   string = string.downcase

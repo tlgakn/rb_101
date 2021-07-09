@@ -19,19 +19,6 @@ You may assume that the count argument will always have a value of 0 or greater,
 Copy Code
 =end
 
-# not working (tried to solve it with Integer#times method)
-def sequence(count, starting_number)
-  numbers_array = []
-  num = starting_number
-  sum = 0
-  
-  count.times do |num|
-    numbers_array << num
-    num += sum
-  end
-
-  numbers_array
-end
   
 # my solution
 def sequence(count, starting_number)
@@ -83,6 +70,33 @@ def sequence(count, first)
   (1..count).map { |value| value * first }
 end
   
+
+# second time my solution with PEDAC
+# rules: 
+  # count argument will always have a value of 0 or greater
+  # starting_number can be any integer value
+  # if the count is 0, an empty list should be returned
+
+
+# algorithm:
+  # initialize a sum variable
+  # initialize an empty result array
+  # starting with the starting number -- increment 
+    # push the sum each time to the new array "count times"
+  # return the new array
+
+
+  def sequence(count, increment)
+    return [] if count == 0
+    result = []
+    sum = 0
+    
+    count.times do |_|
+      sum += increment
+      result << sum
+    end
+    result
+  end
   
 
 p sequence(5, 1) == [1, 2, 3, 4, 5]

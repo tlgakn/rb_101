@@ -28,7 +28,7 @@ def multiply_all_pairs(array1, array2)
       sorted_array << number * num
     end
   end
-  p sorted_array.sort
+  sorted_array.sort
 end
   
   
@@ -43,21 +43,15 @@ def multiply_all_pairs(array_1, array_2)
   products.sort
 end
 
-  # Student solution
-  def multiply_all_pairs(array1, array2)
-  new_arr = []
-  counter1 = 0 
-  loop do
-    counter2 = 0
-    loop do
-    new_arr << array1[counter1] * array2[counter2]
-    counter2 += 1
-    break if counter2 == array2.size
+# second time
+def multiply_all_pairs(arr1, arr2)
+  multiplied = []
+  arr1.each do |num1|
+    arr2.each do |num2|
+      multiplied << num1 * num2
     end
-  counter1 += 1
-  break if counter1 == array1.size
   end
-  new_arr.sort
+  multiplied.sort
 end
   
 p multiply_all_pairs([2, 4], [4, 3, 1, 2]) #== [2, 4, 4, 6, 8, 8, 12, 16]

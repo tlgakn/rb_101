@@ -3,9 +3,26 @@
 # and then returns the sum of the sums of each leading subsequence for that Array. 
 # You may assume that the Array always contains at least one number.
 
-# Examples:
+# second time
+def sum_of_sums(array)
+  sum = 0
+  0.upto(array.length) do |length|
+    sum += array[0,length].sum
+  end
+  sum
+end
 
-# Copy Code
+# third time
+def sum_of_sums(arr)
+  sub_sum = []
+  
+  arr.each_with_index do |obj, idx|
+    sub_sum << arr[0, idx+1]
+  end
+  total_sum = 0
+  sub_sum.each {|sub_arr| total_sum += sub_arr.sum}
+  total_sum
+end
 
 def sum_of_sums(integer_array)
   sum = 0 

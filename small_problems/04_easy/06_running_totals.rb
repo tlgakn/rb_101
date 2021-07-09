@@ -30,6 +30,20 @@ def running_total(array)
   end
 end
 
+# my solution second time
+def running_total(array)
+  run_total = []
+  
+  index = 1
+  while index <= array.length
+    element = array.slice(0,index)
+    run_total << element.inject(:+)
+    index += 1
+  end
+  run_total
+end
+
+
 p running_total([2, 5, 13]) == [2, 7, 20]
 p running_total([14, 11, 7, 15, 20]) == [14, 25, 32, 47, 67]
 p running_total([3]) == [3]

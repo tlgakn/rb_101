@@ -27,22 +27,6 @@
 
 =end
 
-# def reverse!(array_of_elements)
-#   left_index = 0
-#   right_index = 1
-#   reversed_array = []
-#   loop do 
-#     reversed_array[array_of_elements.length-right_index] = array_of_elements[left_index]
-#     left_index += 1
-#     right_index += 1
-    
-#     break if array_of_elements.length - right_index < 0
-    
-#   end
-#   p reversed_array
-#   p array_of_elements
-# end
-
 def reverse!(array_of_elements)
   return [] if array_of_elements.empty?
   holder_array = []
@@ -60,7 +44,12 @@ def reverse!(array_of_elements)
   array_of_elements
 end
 
+# Another student solution
+def reverse!(array)
+  array.sort_by!.with_index { |_, index| -index }
+end
 
+# LS Solution
 def reverse!(array)
   left_index = 0
   right_index = -1

@@ -25,29 +25,30 @@
 
 =end
 
-# def include?(array_of_integers, integer)
-  
-#   index = 0
-#   return false if array_of_integers.empty?
-  
-#   loop do 
-    
-#     if array_of_integers[index] == integer
-#       return true
-#     elsif array_of_integers[index] == nil && integer == nil
-#       return true
-#     else
-#       index += 1
-#       break false if array_of_integers.size == index
-#       next   
-#     end
-#   end 
-# end
-  
+
 
 def include?(array_of_integers, integer)
   array_of_integers.each do |num|
     return true if num == integer
+  end
+  false
+end
+
+# Second approach
+def include?(array, value)
+  array.any? { |el| value == el ? true : false }
+end
+
+# third time my solution
+def include?(array, num_to_search)
+  return false if array.length == 0
+  index = 0
+  loop do
+    if array[index] == num_to_search
+      return true
+    end
+    index += 1
+    break if index >= array.length
   end
   false
 end

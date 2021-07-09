@@ -35,11 +35,37 @@ def interleave(array_of_integers, array_of_strings)
   new_array
 end
 
+# my solution second time
+def interleave(array1, array2)
+  combined_array = []
+  index = 0
+  
+  loop do
+    break if index >= array1.length
+    combined_array << array1[index]
+    combined_array << array2[index]
+    index += 1
+  end
+  combined_array
+end
+
+# my solution third time
+def interleave(arr1, arr2)
+  new_arr = []
+  index = 0
+  loop do 
+    new_arr << [arr1[index], arr2[index]]
+    index += 1
+    break if index >= arr1.length
+  end
+  new_arr.flatten
+end
+
  # student solution
  def interleave(array1, array2)
   result = []
   index2 = 0
-  array1.each_with_index do |element, index|
+  array1.each_with_index do |element, index| # no need to use each_with_index  method here, each method is sufficient
     result << element
     result << array2[index2]
     index2 += 1
@@ -56,6 +82,8 @@ end
    end
    result
  end
+
+
 
 #Further Exploration
 def interleave(array1, array2)

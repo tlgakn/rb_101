@@ -15,9 +15,12 @@ Copy Code
 
 def penultimate(string)
   words_array = string.split
-  
-  #words_array[words_array.length - 2]
   words_array[-2]
+end
+
+# second time
+def penultimate(word)
+  word.split[-2]
 end
   
 p penultimate('last word') == 'last'

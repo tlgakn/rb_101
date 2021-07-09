@@ -31,6 +31,18 @@ def find_dup(array_of_integers)
   end
 end
   
+
+# second time my solution
+def find_dup(arr)
+  sorted = arr.sort
+  num_arr = sorted.select.with_index do |el, idx|
+    current_el = sorted[idx]
+    if current_el == sorted[idx + 1]
+      current_el
+    end
+  end
+  num_arr[0]
+end
   
   
 p find_dup([1, 5, 3, 1]) == 1

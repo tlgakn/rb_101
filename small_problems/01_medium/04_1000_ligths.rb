@@ -43,9 +43,9 @@ Return the array
 
 =end
 
-# def create_lights(number)
-#   lights = Array.new(number + 1, "on")
-# end
+def create_lights(number)
+  lights = Array.new(number + 1, "on")
+end
 
 # Rona's Solution
 def lights_on_or_off(number)
@@ -118,16 +118,24 @@ p toggle_lights(1000)
 
 p lights_on_or_off(10)
 
-  
-# round 2
-# on off on off on
 
-# round 3
-# on off off off on
+# with 5 ligths 
+round 1 -- on on on on on
+round 2 -- on off on off on
+round 3 -- on off off off on
+round 4 -- on off off on on
+round 5 -- on off off on off
 
-# round 4
-# on off off on on
 
-# round 5
-# on off off on off
-  
+# with 10 lights
+           1   2 3  4  5  6  7  8  9  10
+round 1 -- on on on on on on on on on on
+round 2 -- on of on of on of on of on of
+round 3 -- on of of of on on on of of of
+round 4 -- on of of on on on on on of of
+round 5 -- on of of on of on on on of on
+round 6 -- on of of on of of on on of on
+round 7 -- on of of on of of of on of on
+round 8 -- on of of on of of of of of on
+round 9 -- on of of on of of of of on on
+round 10-- on of of on of of of of on of

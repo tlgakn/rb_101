@@ -27,7 +27,22 @@ def substrings(string)
   p result
 end
 
-
+# my substrings method
+def substrings(str)
+  sub_str = []
+  outer_index = 0
+  loop do
+    inner_index = 1
+    loop do 
+      sub_str << str[outer_index, inner_index]
+      inner_index += 1
+      break if inner_index > str.length - outer_index
+    end
+    outer_index += 1
+    break if outer_index >= str.length
+  end
+  sub_str
+end
 
 
 

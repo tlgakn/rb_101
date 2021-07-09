@@ -20,6 +20,12 @@ def show_multiplicative_average(array_of_numbers)
   divided_numbers = format('%.3f',divided_numbers)
 end
   
+# second time
+def show_multiplicative_average(arr)
+  multiple = arr.reduce(:*)
+  result = multiple / arr.length.to_f
+  format('%.3f',result)
+end
   
 p show_multiplicative_average([3, 5])                # => The result is 7.500
 p show_multiplicative_average([6])                   # => The result is 6.000
