@@ -127,8 +127,6 @@ def computer_places_piece!(brd)
     end
   end
 
-  
-
   if !square
     square = empty_squares(brd).sample
   end
